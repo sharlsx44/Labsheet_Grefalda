@@ -45,9 +45,6 @@ function MenuCard(props) {
 
         <h2>PRICE:</h2>
         <p>₱{props.price.toFixed(2)}</p>
-
-        <h2>RATING:</h2>
-        <p>{props.rating}/10</p>
       </div>
 
       <div className="quantity">

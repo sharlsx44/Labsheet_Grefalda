@@ -7,29 +7,86 @@ function App() {
   const [menu, setMenu] = useState([
     {
       id: 1,
-      name: "Burger",
-      price: 120,
-      rating: 9.5,
-      image: "https://via.placeholder.com/280x180.png?text=Burger",
+      name: "iPhone",
+      price: 100,
+      category: "Mobile",
+      image: "https://imgs.search.brave.com/ldOJA6UFpr4UagBC-f7OqOHevrmJ3ywCMaYXC29ODlU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubWFjcnVtb3Jz/LmNvbS9hcnRpY2xl/LW5ldy8yMDI1LzA5/L2lQaG9uZS0xNy1D/b2xvcnMuanBn",
     },
     {
       id: 2,
-      name: "Pizza",
-      price: 250,
-      rating: 9.2,
-      image: "https://via.placeholder.com/280x180.png?text=Pizza",
+      name: "Computer Monitor",
+      price: 120,
+      category: "Computer",
+      image: "https://imgs.search.brave.com/togm6o_WTgMlNd69fgxtCcEKGSa1SuptguuDFbq2MmI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cy5r/dGNwbGF5LmNvbS9j/ZG4vc2hvcC9maWxl/cy9IMzJTMTdGXzJl/MTQ4YjQ0LTVkMmYt/NGFmNS1iNjc5LWY4/YTg4MTAzNDAwMS5w/bmc_dj0xNzQ1NzQ4/MDc0JndpZHRoPTQw/MDA",
     },
     {
       id: 3,
-      name: "Fries",
-      price: 80,
-      rating: 8.8,
-      image: "https://via.placeholder.com/280x180.png?text=Fries",
+      name: "Keyboard",
+      price: 60,
+      category: "Accessories",
+      image: "https://imgs.search.brave.com/NyhWqXC2ULbnjjM9G9Gd50meXyh8XgCqvy2GZvIOwFQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yZWRy/YWdvbnNob3AuY29t/L2Nkbi9zaG9wL2Zp/bGVzL1JlZHJhZ29u/QU5UT05JVU1LNzQ1/UFJPS2V5Ym9hcmRf/MS5wbmc_dj0xNzc2/MzIzMTc3JndpZHRo/PTUzMw",
+    },
+    {
+      id: 4,
+      name: "CCTV Camera",
+      price: 50,
+      category: "Camera",
+      image: "https://imgs.search.brave.com/HS8w7tHQql_fJs9g5WoytlwbGUX-rsI88vh5t0aiXIk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kb21h/ci5jb20vY2RuL3No/b3AvcHJvZHVjdHMv/cngxZDR6LTEuanBn/P3Y9MTc1NDgzOTM4/MiZ3aWR0aD0xMDAw",
+    },
+    {
+      id: 5,
+      name: "Television",
+      price: 70,
+      category: "TV",
+      image: "https://imgs.search.brave.com/jeLrgoVCRt6TUGtWhccP8GEkBRzsiAeq0ifIb0j2ScA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bmZtLmNvbS9kdy9p/bWFnZS92Mi9CREZN/X1BSRC9vbi9kZW1h/bmR3YXJlLnN0YXRp/Yy8tL1NpdGVzLW5m/bS1tYXN0ZXItY2F0/YWxvZy9kZWZhdWx0/L2R3ZDU2Y2M5MTQv/aW1hZ2VzLzA2OS80/NC82OTQ0Nzg1Mi0x/LmpwZz9zdz0zNjUm/c2g9MzY1JnNtPWZp/dA",
+    },
+    {
+      id: 6,
+      name: "Mouse",
+      price: 30,
+      category: "Accessories",
+      image: "https://imgs.search.brave.com/3MSZP4fH7W6WeJz9xT31_M_iNySbEMFN-V9KSB9j_dM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdG9y/ZS5hbG5hYmFhLmNv/bS9jZG4vc2hvcC9m/aWxlcy9Mb2dpdGVj/aEdQUk9YU1VQRVJM/SUdIVFdpcmVsZXNz/R2FtaW5nTW91c2Vf/YWxuYWJhYS5jb21f/YzgzMDBhYmItZGE0/Yy00MGUyLWI5MmUt/YWUzYmRiMTYxYjE5/LmpwZz92PTE2ODQ0/MDc4NjYmd2lkdGg9/MTk0Ng",
+    },
+    {
+      id: 7,
+      name: "CPU",
+      price: 20,
+      category: "Computer",
+      image: "https://imgs.search.brave.com/P7znYLdFb2hbLZl8GqechGroUsHE-lYhsTP4XLRoibA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcnRwaXhlbC5h/aS9zcGFpL3FfbG9z/c3krcmV0X2ltZyt0/b19hdXRvL3d3dy5w/Y2d1aWRlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNC8w/My81OTAwWC5qcGc",
+    },
+    {
+      id: 8,
+      name: "GPU",
+      price: 50,
+      category: "Computer",
+      image: "https://imgs.search.brave.com/VAfaoR9aBmvdQDJRCqheW1ZH2dlrg7v7SbH-W1b_5-s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzExSTBWNWlzMkwu/anBn",
+    },
+    {
+      id: 9,
+      name: "Printer",
+      price: 45,
+      category: "Computer",
+      image: "https://imgs.search.brave.com/2ojLDBKysbrbpX0FnCN2F57Lu-jNRRs9QYoPS1FcXXA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5vZmZpY2VkZXBv/dC5jb20vaW1hZ2Vz/L3RfbGFyZ2UsZl9h/dXRvL3Byb2R1Y3Rz/LzkyMTU2MDAvMS5q/cGc",
+    },
+    {
+      id: 10,
+      name: "Smart Watch",
+      price: 25,
+      category: "Mobile",
+      image: "https://imgs.search.brave.com/xs_O5KjN3VIG2cmPcdzgFKdsTKlY28ppVkooTsrbeGk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXBwbGUuY29tL3Yv/YXBwbGUtd2F0Y2gt/c2VyaWVzLTExL2Mv/aW1hZ2VzL292ZXJ2/aWV3L29uLXRoZS1n/by93cmlzdF9mbGlj/a19hbHRfZW5kZnJh/bWVfX2MyNTVkdnd1/cjljaV9sYXJnZS5q/cGc",
     },
   ]);
 
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const categories = ["All", ...new Set(menu.map((item) => item.category))];
+
+  const filteredMenu =
+    selectedCategory === "All"
+      ? menu
+      : menu.filter((item) => item.category === selectedCategory);
 
   const handleDelete = (id) => {
     setMenu(menu.filter((item) => item.id !== id));
@@ -63,10 +120,29 @@ function App() {
   return (
     <div className="app-container">
       <div className="header">
-        <h1>Event Planner</h1>
-        <button className="cart-btn" onClick={() => setShowCart(!showCart)}>
+        <h1>Electronic Shop</h1>
+        <button
+          className="cart-btn"
+          onClick={() => setShowCart(!showCart)}
+          disabled={cart.length === 0}
+        >
           🛒 Cart ({cart.length})
         </button>
+      </div>
+
+
+      <div className="category-buttons">
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`category-btn ${
+              selectedCategory === category ? "active" : ""
+            }`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
 
       {showCart && (
@@ -74,9 +150,11 @@ function App() {
           <div className="cart-content">
             <div className="cart-header">
               <h2>Shopping Cart</h2>
-              <button className="close-btn" onClick={() => setShowCart(false)}>✕</button>
+              <button className="close-btn" onClick={() => setShowCart(false)}>
+                ✕
+              </button>
             </div>
-            
+
             {cart.length === 0 ? (
               <p className="empty-cart">Your cart is empty</p>
             ) : (
@@ -86,8 +164,12 @@ function App() {
                     <div key={item.id} className="cart-item">
                       <div className="cart-item-info">
                         <h3>{item.name}</h3>
-                        <p>₱{item.price.toFixed(2)} x {item.quantity}</p>
-                        <p className="cart-item-total">₱{(item.price * item.quantity).toFixed(2)}</p>
+                        <p>
+                          ₱{item.price.toFixed(2)} x {item.quantity}
+                        </p>
+                        <p className="cart-item-total">
+                          ₱{(item.price * item.quantity).toFixed(2)}
+                        </p>
                       </div>
                       <button
                         className="remove-btn"
@@ -109,13 +191,12 @@ function App() {
       )}
 
       <div className="menu-container">
-        {menu.map((item) => (
+        {filteredMenu.map((item) => (
           <MenuCard
             key={item.id}
             id={item.id}
             name={item.name}
             price={item.price}
-            rating={item.rating}
             image={item.image}
             onDelete={handleDelete}
             onAddToCart={handleAddToCart}
