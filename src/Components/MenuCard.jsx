@@ -48,7 +48,7 @@ function MenuCard(props) {
         <p>{props.description}</p>
 
         <h2>PRICE:</h2>
-        <p>₱{props.price.toFixed(2)}</p>
+        <p>${props.price.toFixed(2)}</p>
 
       </div>
 

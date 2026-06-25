@@ -175,10 +175,10 @@ function App() {
                       <div className="cart-item-info">
                         <h3>{item.name}</h3>
                         <p>
-                          ₱{item.price.toFixed(2)} x {item.quantity}
+                          ${item.price.toFixed(2)} x {item.quantity}
                         </p>
                         <p className="cart-item-total">
-                          ₱{(item.price * item.quantity).toFixed(2)}
+                          ${(item.price * item.quantity).toFixed(2)}
                         </p>
                       </div>
                       <button
@@ -191,7 +191,7 @@ function App() {
                   ))}
                 </div>
                 <div className="cart-summary">
-                  <h3>Total: ₱{calculateTotal().toFixed(2)}</h3>
+                  <h3>Total: ${calculateTotal().toFixed(2)}</h3>
                   <button className="checkout-btn">Checkout</button>
                 </div>
               </>
