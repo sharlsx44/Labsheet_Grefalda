@@ -21,6 +21,7 @@ function MenuCard(props) {
           price: props.price,
           rating: props.rating,
           image: props.image,
+          description: props.description
         },
         count
       );
@@ -43,8 +44,12 @@ function MenuCard(props) {
         <h2>NAME:</h2>
         <p>{props.name}</p>
 
+        <h2>Description:</h2>
+        <p>{props.description}</p>
+
         <h2>PRICE:</h2>
         <p>₱{props.price.toFixed(2)}</p>
+
       </div>
 
       <div className="quantity">
