@@ -1,15 +1,31 @@
 import { useState } from "react";
 
 function MenuCard(props) {
-
   const [count, setCount] = useState(0);
+  const stock = Number(props.quantity);
+
+  const getStableRating = () => {
+    if (typeof props.rating === "number") {
+      return props.rating;
+    }
+
+    const seed = props.id ?? props.name.length ?? 0;
+    const raw = ((seed * 31 + (props.name?.length ?? 0)) % 41 + 10) / 10;
+    return Number(raw.toFixed(1));
+  };
+
+  const ratingValue = getStableRating();
 
   const increase = () => {
-    setCount(count + 1);
+    if (count < stock) {
+      setCount(count + 1);
+    }
   };
 
   const decrease = () => {
-    setCount(count - 1);
+    if (count > 0) {
+      setCount(count - 1);
+    }
   };
 
   const addToCart = () => {
@@ -21,7 +37,8 @@ function MenuCard(props) {
           price: props.price,
           rating: props.rating,
           image: props.image,
-          description: props.description
+          description: props.description,
+          quantity: props.quantity,
         },
         count
       );
@@ -49,6 +66,12 @@ function MenuCard(props) {
 
         <h2>PRICE:</h2>
         <p>${props.price.toFixed(2)}</p>
+
+        <h2>{stock < 5 ? "LOW STOCK:" : "STOCK:"}</h2>
+        <p className={stock < 5 ? "stock-low" : ""}>{props.quantity}</p>
+
+        <h2>RATING:</h2>
+        <p>{ratingValue.toFixed(1)}</p>
 
       </div>
 

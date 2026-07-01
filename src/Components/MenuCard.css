@@ -59,6 +59,11 @@
   line-height: 1.4;
 }
 
+.stock-low {
+  color: #d6336c;
+  font-weight: bold;
+}
+
 .quantity {
   display: flex;
   align-items: center;
